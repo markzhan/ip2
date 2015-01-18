@@ -1,10 +1,10 @@
 # ip2
-Another ip address tools
+Another ip address & hosts tools
 
 ## Install
-
+```
   npm install -g ip2
-
+```
 ## Usage
 ```
 Usage: ip2 [options] [command]
