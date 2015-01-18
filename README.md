@@ -2,7 +2,6 @@
 Another ip address tools
 
 ## install
----
   npm install -g ip2
 
 ## Usage
@@ -12,5 +11,4 @@ Another ip address tools
 ## Example
 
 ## License
----
 MIT
