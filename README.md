@@ -1,12 +1,12 @@
 # ip2
 Another ip address tools
 
-## install
+## Install
   npm install -g ip2
 
 ## Usage
 
-## hosts
+## Hosts file
 
 ## Example
 
