@@ -3,7 +3,7 @@ Another ip address & hosts tools
 
 ## Install
 ```
-  npm install -g ip2
+$ npm install -g ip2
 ```
 ## Usage
 ```
@@ -24,7 +24,13 @@ Usage: ip2 [options] [command]
 ```
 ## Hosts file
 
-## Example
+* [for google](http://)
 
+## Example
+```
+$ ip2 ls
+$ ip2 use google
+$ ip2 use markzhan
+```
 ## License
 MIT
