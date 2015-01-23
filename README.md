@@ -4,21 +4,27 @@
 
 # ip2
 
-Another ip address & hosts tools
+Another ip address & hosts tools.
 
 ## Installation
 ```
-$ npm install -g ip2
-# or mac
+$ npm i -g ip2
+# or
 $ sudo npm i -g ip2
 ```
 
 ## Example
 ```
+$ ip2 -h
+$ ip2 info -h
+$ ip2 info -li
+
 $ ip2 ls
-$ ip2 -li
-$ sudo ip2 add abc.txt
-$ sudo ip2 use abc
+$ ip2 cat
+$ sudo ip2 add google.txt
+$ sudo ip2 use google
+
+NOTICE: The sudo is must be used when you operating the hosts file.
 ```
 
 ## Usage
@@ -27,21 +33,24 @@ Usage: ip2 [options] [command]
 
   Commands:
 
-    ls              list all hosts
-    add <path>      add one custom hosts file
-    use <hosts>     change system hosts to hosts
-    del <hosts>     delete one custom hosts file
-    reload          reload used hosts
-    reset           reset hosts
-    help            print help
+    ls [dir]         list hosts
+    cat [hosts]      print hosts contents
+    add <file|dir>   add custom hosts to system
+    use <hosts>      change system hosts to custom hosts
+    rm <hosts>       delete one custom hosts file
+    reload           reload used hosts
+    reset            reset hosts
+    init             init hosts
+    info [options]   output system & ip info
+    help             print help
+    *                undefined
 
   Options:
 
     -h, --help      output usage information
     -V, --version   output the version number
-    -v, --version   get version
-    -l, --local     output local ip
-    -i, --internet  output internet ip
+    -v, --version   get version number
+    -f, --force     overwrite file
 ```
 
 ## Hosts file
@@ -52,6 +61,9 @@ Usage: ip2 [options] [command]
 * [google-hosts](https://github.com/txthinking/google-hosts)
 * [williamlong](http://www.williamlong.info/archives/3983.html)
 
+## Release History
+See the [CHANGELOG](CHANGELOG.md).
+
 ## License
 
-This project is available under the MIT license. See LICENSE for details.
+This project is available under the MIT license. See [LICENSE](LICENSE) for details.

@@ -1,12 +1,13 @@
 {
   "name": "ip2",
-  "version": "0.1.5",
+  "version": "0.2.5",
   "description": "another ip address & hosts tools",
   "main": "index.js",
   "bin": {
-    "ip2": "./bin/ip2.js"
+    "ip2": "./bin/ip2-cli.js"
   },
   "scripts": {
+    "start": "node ip2.js",
     "test": "make test"
   },
   "repository": {
@@ -18,7 +19,8 @@
     "hosts",
     "cli",
     "tools",
-    "google"
+    "google",
+    "command"
   ],
   "author": "Mark Zhan",
   "license": "MIT",
