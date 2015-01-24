@@ -68,6 +68,6 @@ ip2 info -lis  # 支持选项合并简写
 
 参考和使用了 [TJ](http://www.tjholowaychuk.com/) 大神的 [commander.js](https://github.com/tj/commander.js)，内置 [alsohosts](https://github.com/alsotang/alsohosts)。
 
-正确看待 TJ 大神“离开” Node 社区。没有一种技术可以满足所有时代、所有人的所有需求。TJ 玩 Go，Node 大神们启动 io.js，失望之外，希望之初。
+没有一种技术可以满足所有时代、所有人的所有需求。TJ 玩 Go，Node 大牛们启动 io.js，失望之余，希望之初。
 
 高山仰止，虽不能至，然心向往之。无论如何，他就在那里。
