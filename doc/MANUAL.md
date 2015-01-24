@@ -50,7 +50,7 @@ ip2 cat <name>  # 显示指定 hosts 文件内容
 
 * `ip2 use <name>` 使用定制 hosts 文件。切换启用指定的 hosts 文件。之后 `ip2 ls` 会发现当前 hosts 名字前有 `>` 标志。参数是 `ip2 ls` 中的 hosts 名字。
 
-* `ip2 reload` 重载当前 hosts 文件。此命令将之前 `ip2 use` 启用的 hosts 文件重新复制到系统 hosts 文件。（呵呵，不知道有什么用）
+* `ip2 reload` 重载当前 hosts 文件。此命令将之前 `ip2 use` 启用的 hosts 文件重新复制到系统 hosts 文件。比如：可以 `ip2 add` 同名 hosts，然后 `ip2 reload` 更新。
 
 * `ip2 rm <name>` 删除自定义 hosts 文件。物理删除系统目录中自定义的 hosts 文件。参数是 `ip2 ls` 列表中显示的名字，其中有 `>` 标志表示是当前启用的定制 hosts 文件，不能删除。
 
