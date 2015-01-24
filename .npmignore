@@ -1,2 +1,4 @@
 .git*
+./doc*
+./test*
 npm-debug.log

@@ -61,7 +61,7 @@ See [MANUAL](doc/MANUAL.md) for details.
 * [williamlong](http://www.williamlong.info/archives/3983.html)
 
 ## Release History
-See the [CHANGELOG](CHANGELOG.md).
+See the [CHANGELOG](doc/CHANGELOG.md).
 
 ## License
 
