@@ -27,7 +27,7 @@ help             print help
 
 ### 命令说明
 
-* `ip2 init` 初始化。备份系统当前 hosts 文件，并将 ip2 hosts 暂存区的 hosts 文件复制到可用 hosts 列表。重复执行此命令会覆盖 hosts 列表中与暂存区同名的 hosts 文件，但不会重复备份系统 hosts 文件（暂不支持 -f 参数）。
+* `ip2 init` 初始化。备份系统当前 hosts 文件，并将 ip2 hosts 暂存区的 hosts 文件复制到可用 hosts 列表。重复执行此命令会覆盖 hosts 列表中与暂存区同名的 hosts 文件，但不会重复备份系统 hosts 文件（暂不支持 -f 选项）。
 
 * `ip2 ls [dir]` 列表 hosts 文件。此命令列出可用的自定义 hosts 文件，支持列出暂存区 hosts 文件和指定目录 hosts 文件，只会列出规范命名的文件。ip2 hosts 文件名格式是 hosts.name.ip2 。
 ```

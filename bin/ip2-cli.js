@@ -8,7 +8,7 @@ var program = require('commander');
 var sysinfo = require('../bin/info');
 
 program
-  .version('0.2.8')
+  .version('0.2.9')
   .option('-v, --version', 'get version number')
   .option('-f, --force', 'overwrite file')
 
