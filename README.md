@@ -50,7 +50,7 @@ Usage: ip2 [options] [command]
     -v, --version   get version number
     -f, --force     overwrite file
 ```
-See [MANUAL](doc/MANUAL) for details.
+See [MANUAL](doc/MANUAL.md) for details.
 
 ## Hosts file
 
