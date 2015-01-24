@@ -1,3 +1,7 @@
+## 0.2.8 (2015-01-24)
+- ADD - 回显 add hosts 名字
+- FIX - 修复 windows 兼容性 bug
+
 ## 0.2.5 (2015-01-23)
 - NEW - 系统信息查看命令 - info
 - UPD - 全局选项 -i -l 移至 info 选项

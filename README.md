@@ -17,15 +17,14 @@ $ sudo npm i -g ip2
 ```
 $ ip2 -h
 $ ip2 info -h
-$ ip2 info -li
+$ ip2 info -lis
 
 $ ip2 ls
 $ ip2 cat
 $ sudo ip2 add google.txt
 $ sudo ip2 use google
-
-NOTICE: The sudo is must be used when you operating the hosts file.
 ```
+NOTICE: The sudo is must be used when you operating the hosts file.
 
 ## Usage
 ```
@@ -35,7 +34,7 @@ Usage: ip2 [options] [command]
 
     ls [dir]         list hosts
     cat [hosts]      print hosts contents
-    add <file|dir>   add custom hosts to system
+    add <file>       add custom hosts to system
     use <hosts>      change system hosts to custom hosts
     rm <hosts>       delete one custom hosts file
     reload           reload used hosts
@@ -43,7 +42,6 @@ Usage: ip2 [options] [command]
     init             init hosts
     info [options]   output system & ip info
     help             print help
-    *                undefined
 
   Options:
 
@@ -52,6 +50,7 @@ Usage: ip2 [options] [command]
     -v, --version   get version number
     -f, --force     overwrite file
 ```
+See [MANUAL](doc/MANUAL) for details.
 
 ## Hosts file
 

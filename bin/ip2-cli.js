@@ -8,7 +8,7 @@ var program = require('commander');
 var sysinfo = require('../bin/info');
 
 program
-  .version('0.2.5')
+  .version('0.2.8')
   .option('-v, --version', 'get version number')
   .option('-f, --force', 'overwrite file')
 
@@ -127,8 +127,8 @@ function example() {
   console.log();
   console.log('  Examples:');
   console.log();
-  console.log('    ip2 -h        # print help');
-  console.log('    ip2 ls        # list hosts');
-  console.log('    ip2 info -h   # sub cmd help');
+  console.log('    ip2 -h         # print help');
+  console.log('    ip2 ls         # list hosts');
+  console.log('    ip2 info -lis  # ip & system info');
   console.log();
 }

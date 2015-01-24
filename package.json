@@ -1,13 +1,13 @@
 {
   "name": "ip2",
-  "version": "0.2.5",
+  "version": "0.2.8",
   "description": "another ip address & hosts tools",
   "main": "index.js",
   "bin": {
-    "ip2": "./bin/ip2-cli.js"
+    "ip2": "ip2.js"
   },
   "scripts": {
-    "start": "node ip2.js",
+    "start": "node ip2",
     "test": "make test"
   },
   "repository": {
