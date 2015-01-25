@@ -1,7 +1,7 @@
 
 # ip2 使用手册
 
-ip2 可以帮助开发人员快速切换自定义 hosts 文件，简化 hosts 文件管理。此外，ip2 还可以显示本机和互联网 ip。ip2 是使用 Node 开发的，代码托管在 GitHub - https://github.com/markzhan/ip2 。
+ip2 是使用 Node 开发的开源命令行工具。ip2 可以帮助开发人员快速切换自定义 hosts 文件，简化 hosts 文件管理。此外，ip2 还可以显示本机和互联网 ip。代码托管在 GitHub - https://github.com/markzhan/ip2 。
 
 操作 hosts 文件，需要使用 sudo 执行相关命令，windows 需要管理员权限。此工具不建议非技术人员使用，不要随意使用从网络获取的 hosts 文件。
 
@@ -62,6 +62,12 @@ ip2 info -i  # 互联网 ip 地址
 ip2 info -s  # 系统信息
 ip2 info -l -i -s  # 同时显示
 ip2 info -lis  # 支持选项合并简写
+```
+
+### 升级与卸载
+```
+sudo npm update -g ip2  # 升级
+sudo npm uninstall -g ip2  # 卸载
 ```
 
 ### 其它
