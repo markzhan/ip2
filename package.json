@@ -1,6 +1,6 @@
 {
   "name": "ip2",
-  "version": "0.2.10",
+  "version": "0.2.12",
   "description": "another ip address & hosts tools",
   "main": "index.js",
   "bin": {

@@ -1,3 +1,6 @@
+## 0.2.10 (2015-01-25)
+- UPD - use 当前 hosts 时提示正在使用
+
 ## 0.2.8 (2015-01-24)
 - ADD - 回显 add hosts 名字
 - FIX - 修复 windows 兼容性 bug
