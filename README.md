@@ -8,13 +8,11 @@ Another ip address & hosts tools.
 
 ## Installation
 ```
-$ npm i -g ip2
-# or
 $ sudo npm i -g ip2
 ```
 
 ## Example
-```
+```bash
 $ ip2 -h
 $ ip2 info -h
 $ ip2 info -lis
