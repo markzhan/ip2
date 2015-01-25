@@ -1,5 +1,5 @@
 
-# ip2 技术说明
+# ip2 使用说明
 
 ip2 可以帮助开发人员快速切换自定义 hosts 文件，简化 hosts 文件管理。此外，ip2 还可以显示本机和互联网 ip。ip2 是使用 Node 开发的开源命令行工具，代码托管在 GitHub - https://github.com/markzhan/ip2 。
 
@@ -29,7 +29,7 @@ help             print help
 
 * `ip2 init` 初始化。备份系统当前 hosts 文件，并将 ip2 hosts 暂存区的 hosts 文件复制到可用 hosts 列表。重复执行此命令会覆盖 hosts 列表中与暂存区同名的 hosts 文件，但不会重复备份系统 hosts 文件。
 
-* `ip2 ls [dir]` 列表 hosts 文件。此命令列出可用的自定义 hosts 文件，支持列出暂存区 hosts 文件和指定目录 hosts 文件，只会列出规范命名的文件。ip2 hosts 文件名格式是 `hosts.<name>.ip2` 。
+* `ip2 ls [dir]` 列表 hosts 文件。此命令列出可用的自定义 hosts 文件，缺省显示系统区 hosts 文件列表，支持暂存区和指定目录 hosts 文件列表，只会列出规范命名的文件。ip2 hosts 文件名格式是 `hosts.<name>.ip2` 。
 ```
 ip2 ls  # 列出系统目录 hosts 文件。相当于：
 ip2 ls /etc  # 列出系统目录 hosts 文件 (对于 *nix)
@@ -38,7 +38,7 @@ ip2 ls %windir%\system32\drivers\etc  # windows hosts 文件
 ip2 ls -  # 参数是 - 减号。列出暂存区 hosts 文件
 ```
 
-* `ip2 cat [name]` 显示 hosts 文件内容。参数是 `ip2 ls` 中显示的名字。此命令先在系统目录查找 hosts 文件，支持显示暂存区 hosts 文件。
+* `ip2 cat [name]` 显示 hosts 文件内容。缺省显示系统当前 hosts 文件内容。参数是 `ip2 ls` 中显示的名字。此命令先在系统目录查找 hosts 文件，支持显示暂存区 hosts 文件。
 ```
 ip2 cat  # 显示系统当前 hosts 文件内容
 ip2 cat <name>  # 显示指定 hosts 文件内容
