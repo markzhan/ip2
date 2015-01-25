@@ -6,7 +6,7 @@ ip2 可以帮助开发人员快速切换自定义 hosts 文件，简化 hosts �
 操作 hosts 文件，需要使用 sudo 执行相关命令，windows 需要管理员权限。此工具不建议非技术人员使用，不要随意使用从网络获取的 hosts 文件。
 
 ### 安装
-```sh
+```
 $ sudo npm i -g ip2
 $ ip2 help
 ```
@@ -29,7 +29,7 @@ help             print help
 
 * `ip2 init` 初始化。备份系统当前 hosts 文件，并将 ip2 hosts 暂存区的 hosts 文件复制到可用 hosts 列表。重复执行此命令会覆盖 hosts 列表中与暂存区同名的 hosts 文件，但不会重复备份系统 hosts 文件。
 
-* `ip2 ls [dir]` 列表 hosts 文件。此命令列出可用的自定义 hosts 文件，支持列出暂存区 hosts 文件和指定目录 hosts 文件，只会列出规范命名的文件。ip2 hosts 文件名格式是 hosts.name.ip2 。
+* `ip2 ls [dir]` 列表 hosts 文件。此命令列出可用的自定义 hosts 文件，支持列出暂存区 hosts 文件和指定目录 hosts 文件，只会列出规范命名的文件。ip2 hosts 文件名格式是 `hosts.<name>.ip2` 。
 ```
 ip2 ls  # 列出系统目录 hosts 文件。相当于：
 ip2 ls /etc  # 列出系统目录 hosts 文件 (对于 *nix)
@@ -50,7 +50,7 @@ ip2 cat <name>  # 显示指定 hosts 文件内容
 
 * `ip2 use <name>` 使用定制 hosts 文件。参数是 `ip2 ls` 列表中的 hosts 名字。启用或切换至指定的 hosts 文件。之后 `ip2 ls` 会发现当前使用的 hosts 名字前有 `>` 标志。
 
-* `ip2 reload` 重载当前 hosts 文件。此命令将之前 `ip2 use` 启用的 hosts 文件重新复制到系统 hosts 文件。比如：可以 `ip2 add` 同名 hosts，然后 `ip2 reload` 重载，从而更新系统当前 hosts 文件内容。
+* `ip2 reload` 重载当前 hosts 文件。此命令将之前 `ip2 use` 启用的 hosts 文件，即当前使用的定制 hosts 文件重新复制到系统 hosts 文件。比如：可以 `ip2 add <name> -f` 添加修改后的同名 hosts，然后 `ip2 reload` 重载，从而更新系统当前 hosts 文件。
 
 * `ip2 rm <name>` 删除自定义 hosts 文件。物理删除系统目录中自定义的 hosts 文件。参数是 `ip2 ls` 列表中显示的名字，其中有 `>` 标志表示是当前启用的定制 hosts 文件，不能删除。
 
@@ -65,7 +65,7 @@ ip2 info -lis  # 支持选项合并简写
 ```
 
 ### 升级与卸载
-```sh
+```
 $ sudo npm update -g ip2  # 升级
 $ sudo npm uninstall -g ip2  # 卸载
 ```
@@ -74,6 +74,4 @@ $ sudo npm uninstall -g ip2  # 卸载
 
 参考和使用了 [TJ](http://www.tjholowaychuk.com/) 大神的 [commander.js](https://github.com/tj/commander.js)，内置 [alsohosts](https://github.com/alsotang/alsohosts)。
 
-没有一种技术可以满足所有时代、所有人的所有需求。TJ 玩 Go，Node 大牛们启动 io.js，失望之余，希望之初。
-
-高山仰止，虽不能至，然心向往之。无论如何，他就在那里。
+没有一种技术可以满足所有时代、所有人的所有需求。TJ 玩 Go，Node 大牛们启动 io.js，失望之外，希望之初。高山仰止，虽不能至，然心向往之。
