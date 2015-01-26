@@ -1,4 +1,11 @@
 
+## 0.3.0 (2015-01-26)
+- ADD - 增加 ip 地址 CIDR/Subnet 计算功能
+- ADD - 增加 ip 地址 LongInt 互转功能
+- ADD - 增加 Private ip 判断功能
+- ADD - 增加 ip 地址取反功能
+- ADD - 增加 ip 网段计算功能
+
 ## 0.2.10 (2015-01-25)
 - ADD - use 当前 hosts 时提示正在使用
 

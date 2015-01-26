@@ -1,7 +1,7 @@
 
 # ip2 使用说明
 
-ip2 可以帮助开发人员快速切换自定义 hosts 文件，简化 hosts 文件管理。此外，ip2 还可以显示本机和互联网 ip。ip2 是使用 Node 开发的开源命令行工具，代码托管在 GitHub - https://github.com/markzhan/ip2 。
+ip2 是一个命令行工具，主要功能包括：ip 地址计算；快速切换自定义 hosts 文件；显示本机和互联网 ip 地址。ip2 使用 Node 开发，代码托管在 GitHub - https://github.com/markzhan/ip2 。
 
 操作 hosts 文件，需要使用 sudo 执行相关命令，windows 需要管理员权限。此工具不建议非技术人员使用，不要随意使用从网络获取的 hosts 文件。
 
@@ -56,12 +56,24 @@ ip2 cat <name>  # 显示指定 hosts 文件内容
 
 * `ip2 info` 显示 ip 和系统信息。
 ```
-ip2 info -h  # 子命令帮助信息
-ip2 info -l  # 本地 ip 地址
-ip2 info -i  # 互联网 ip 地址
-ip2 info -s  # 系统信息
+ip2 info -h  # sub cmd help
+ip2 info -l  # output local ip
+ip2 info -i  # output internet ip
+ip2 info -s  # output ip & system info
 ip2 info -l -i -s  # 同时显示
-ip2 info -lis  # 支持选项合并简写
+ip2 info -lis  # 选项简写
+```
+
+* IP 地址计算功能
+```
+ip2 24  # 255.255.255.0
+ip2 127.0.0.1  # ipv4 to long
+ip2 2130706433  # long to ipv4
+ip2 '! 255.255.255.0'  # 0.0.0.255
+ip2 '192.168.1.134 or 0.0.0.255'  # 192.168.1.255
+ip2 '192.168.1.134 mask 255.255.255.0'  # 192.168.1.0
+ip2 '192.168.1.134 subnet 255.255.255.192'  # subnet information
+ip2 192.168.1.134/26  # CIDR subnet, Same as previous
 ```
 
 ### 升级与卸载

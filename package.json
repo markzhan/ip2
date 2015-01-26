@@ -1,6 +1,6 @@
 {
   "name": "ip2",
-  "version": "0.2.12",
+  "version": "0.3.0",
   "description": "another ip address & hosts tools",
   "main": "index.js",
   "bin": {
@@ -30,12 +30,15 @@
   "homepage": "https://github.com/markzhan/ip2",
   "dependencies": {
     "commander": "^2.6.0",
-    "request": "^2.51.0"
+    "request": "^2.51.0",
+    "ip": "^0.3.2"
   },
   "devDependencies": {
     "should": "^4.6.1"
   },
-  "engines": { "node": ">= 0.10.x" },
+  "engines": {
+    "node": ">= 0.10.x"
+  },
   "directories": {
     "test": "test"
   }

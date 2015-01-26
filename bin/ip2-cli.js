@@ -8,7 +8,7 @@ var program = require('commander');
 var sysinfo = require('../bin/info');
 
 program
-  .version('0.2.12')
+  .version('0.3.0')
   .option('-v, --version', 'get version number')
   .option('-f, --force', 'overwrite file')
 
@@ -106,29 +106,46 @@ program
 program
   .command('*')
   .action(function(env){
-    //console.log('deploying "%s"', env);
-    program.outputHelp();
-    example();
+    //console.log('deploying %s', env);
+    var ret = ip2.ip.iptools(env);
+    if (! ret) {
+      //program.outputHelp();
+      localip();
+      example();
+    }
   });
 
 program.parse(process.argv);
 //console.log(' args: %j', program.args);
 
 if (process.argv.length == 2) {
+  localip();
+  example();
+}
+
+function localip() {
   console.log();
   var ips = ip2.ip.localip();
   ips.forEach (function(ip) {
     console.log('  ' + ip);
   });
-  example();
 }
 
 function example() {
-  console.log();
+  console.log('');
   console.log('  Examples:');
-  console.log();
-  console.log('    ip2 -h         # print help');
-  console.log('    ip2 ls         # list hosts');
-  console.log('    ip2 info -lis  # ip & system info');
-  console.log();
+  console.log('');
+  console.log('    ip2 -h           # print help');
+  console.log('    ip2 ls           # list hosts');
+  console.log('    ip2 info -lis    # ip & system info');
+  console.log('');
+  console.log('    ip2 24           # 255.255.255.0');
+  console.log('    ip2 127.0.0.1    # ipv4 to long');
+  console.log('    ip2 2130706433   # long to ipv4');
+  console.log("    ip2 '! 255.255.255.0'  # 0.0.0.255");
+  console.log("    ip2 '192.168.1.134 or 0.0.0.255'  # 192.168.1.255");
+  console.log("    ip2 '192.168.1.134 mask 255.255.255.0'  # 192.168.1.0");
+  console.log("    ip2 '192.168.1.134 subnet 255.255.255.192'  # subnet information");
+  console.log('    ip2 192.168.1.134/26  # CIDR subnet, Same as previous');
+  console.log('');
 }
