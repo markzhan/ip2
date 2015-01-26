@@ -21,6 +21,15 @@ $ ip2 ls
 $ ip2 cat
 $ sudo ip2 add google.txt
 $ sudo ip2 use google
+
+$ ip2 24           # 255.255.255.0
+$ ip2 127.0.0.1    # ipv4 to long
+$ ip2 2130706433   # long to ipv4
+$ ip2 '! 255.255.255.0'  # 0.0.0.255
+$ ip2 '192.168.1.134 or 0.0.0.255'  # 192.168.1.255
+$ ip2 '192.168.1.134 mask 255.255.255.0'  # 192.168.1.0
+$ ip2 '192.168.1.134 subnet 255.255.255.192'  # subnet information
+$ ip2 192.168.1.134/26  # CIDR subnet, Same as previous
 ```
 NOTICE: The sudo is must be used when you operating the hosts file.
 

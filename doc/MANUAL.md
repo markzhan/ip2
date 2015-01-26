@@ -25,7 +25,19 @@ info [options]   output system & ip info
 help             print help
 ```
 
-### 命令说明
+### IP 地址计算
+```
+ip2 24  # 255.255.255.0
+ip2 127.0.0.1  # ipv4 to long
+ip2 2130706433  # long to ipv4
+ip2 '! 255.255.255.0'  # 0.0.0.255
+ip2 '192.168.1.134 or 0.0.0.255'  # 192.168.1.255
+ip2 '192.168.1.134 mask 255.255.255.0'  # 192.168.1.0
+ip2 '192.168.1.134 subnet 255.255.255.192'  # subnet information
+ip2 192.168.1.134/26  # CIDR subnet, Same as previous
+```
+
+### HOSTS 文件管理
 
 * `ip2 init` 初始化。备份系统当前 hosts 文件，并将 ip2 hosts 暂存区的 hosts 文件复制到可用 hosts 列表。重复执行此命令会覆盖 hosts 列表中与暂存区同名的 hosts 文件，但不会重复备份系统 hosts 文件。
 
@@ -54,7 +66,8 @@ ip2 cat <name>  # 显示指定 hosts 文件内容
 
 * `ip2 rm <name>` 删除自定义 hosts 文件。物理删除系统目录中自定义的 hosts 文件。参数是 `ip2 ls` 列表中显示的名字，其中有 `>` 标志表示是当前启用的定制 hosts 文件，不能删除。
 
-* `ip2 info` 显示 ip 和系统信息。
+
+### 显示 ip 和系统信息
 ```
 ip2 info -h  # sub cmd help
 ip2 info -l  # output local ip
@@ -62,18 +75,6 @@ ip2 info -i  # output internet ip
 ip2 info -s  # output ip & system info
 ip2 info -l -i -s  # 同时显示
 ip2 info -lis  # 选项简写
-```
-
-* IP 地址计算功能
-```
-ip2 24  # 255.255.255.0
-ip2 127.0.0.1  # ipv4 to long
-ip2 2130706433  # long to ipv4
-ip2 '! 255.255.255.0'  # 0.0.0.255
-ip2 '192.168.1.134 or 0.0.0.255'  # 192.168.1.255
-ip2 '192.168.1.134 mask 255.255.255.0'  # 192.168.1.0
-ip2 '192.168.1.134 subnet 255.255.255.192'  # subnet information
-ip2 192.168.1.134/26  # CIDR subnet, Same as previous
 ```
 
 ### 升级与卸载
