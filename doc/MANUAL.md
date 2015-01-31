@@ -1,28 +1,41 @@
 
 # ip2 使用说明
 
-ip2 是一个命令行工具，主要功能包括：ip 地址计算；快速切换自定义 hosts 文件；显示本机和互联网 ip 地址。ip2 使用 Node 开发，代码托管在 GitHub - https://github.com/markzhan/ip2 。
+ip2 是一个命令行工具，支持 Mac OS X, Linux, Windows。主要功能包括：ip 地址计算；快速切换自定义 hosts 文件；查询本机和互联网 ip 信息。ip2 使用 Node 开发，代码托管在 GitHub - https://github.com/markzhan/ip2 。
 
-操作 hosts 文件，需要使用 sudo 执行相关命令，windows 需要管理员权限。此工具不建议非技术人员使用，不要随意使用从网络获取的 hosts 文件。
+操作 hosts 文件，需要使用 sudo 执行相关命令，Windows 需要管理员权限。此工具不建议非技术人员使用，不要随意使用从网络获取的 hosts 文件。
 
 ### 安装
 ```
-$ sudo npm i -g ip2
-$ ip2 help
+$ sudo npm i -g ip2  # install
+
+$ sudo npm update -g ip2  # upgrade
 ```
+如果没有安装 Node.js 和 npm，可以去 [Node 官网](http://nodejs.org/) 下载安装包安装。
 
 ### 命令表
 ```
-ls [dir]         list hosts
-cat [hosts]      print hosts contents
-add <file>       add custom hosts to system
-use <hosts>      change system hosts to custom hosts
-rm <hosts>       delete one custom hosts file
-reload           reload used hosts
-reset            reset hosts
-init             init hosts
-info [options]   output system & ip info
-help             print help
+ls [dir]        list hosts
+cat [hosts]     print hosts contents
+add <file>      add custom hosts to system
+use <hosts>     change system hosts to custom hosts
+rm <hosts>      delete one custom hosts file
+reload          reload used hosts
+reset           reset hosts
+init            init hosts
+help            help & example
+*               ip utilities
+```
+
+### 选项表
+```
+-h, --help      output usage information
+-V, --version   output the version number
+-v, --version   get version number
+-f, --force     overwrite file
+-l, --local     get local ip
+-s, --system    get system info
+-i, --internet  get internet ip info
 ```
 
 ### IP 地址计算
@@ -34,7 +47,7 @@ ip2 '! 255.255.255.0'  # 0.0.0.255
 ip2 '192.168.1.134 or 0.0.0.255'  # 192.168.1.255
 ip2 '192.168.1.134 mask 255.255.255.0'  # 192.168.1.0
 ip2 '192.168.1.134 subnet 255.255.255.192'  # subnet information
-ip2 192.168.1.134/26  # CIDR subnet, Same as previous
+ip2 192.168.1.134/26  # CIDR subnet, same as previous
 ```
 
 ### HOSTS 文件管理
@@ -67,24 +80,17 @@ ip2 cat <name>  # 显示指定 hosts 文件内容
 * `ip2 rm <name>` 删除自定义 hosts 文件。物理删除系统目录中自定义的 hosts 文件。参数是 `ip2 ls` 列表中显示的名字，其中有 `>` 标志表示是当前启用的定制 hosts 文件，不能删除。
 
 
-### 显示 ip 和系统信息
+### 查 IP、域名和系统信息
 ```
-ip2 info -h  # sub cmd help
-ip2 info -l  # output local ip
-ip2 info -i  # output internet ip
-ip2 info -s  # output ip & system info
-ip2 info -l -i -s  # 同时显示
-ip2 info -lis  # 选项简写
-```
-
-### 升级与卸载
-```
-$ sudo npm update -g ip2  # 升级
-$ sudo npm uninstall -g ip2  # 卸载
+ip2 qq.com    # get dns information - 查域名信息
+ip2 8.8.8.8   # get ip geo location - 查互联网IP信息
+ip2 -l        # get local ip
+ip2 -s        # get system info
+ip2 -i        # get internet ip info
+ip2 -l -i -s  # get ip & system info
+ip2 -lis      # same as previous
 ```
 
 ### 其它
 
 参考和使用了 [TJ](http://www.tjholowaychuk.com/) 大神的 [commander.js](https://github.com/tj/commander.js)，内置 [alsohosts](https://github.com/alsotang/alsohosts)。
-
-没有一种技术可以满足所有时代、所有人的所有需求。TJ 玩 Go，Node 大牛们启动 io.js，失望之外，希望之初。高山仰止，虽不能至，然心向往之。

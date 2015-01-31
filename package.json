@@ -1,13 +1,12 @@
 {
   "name": "ip2",
-  "version": "0.3.1",
-  "description": "another ip address & hosts tools",
+  "version": "0.3.2",
+  "description": "$ ip2  # Another ip address & hosts tools",
   "main": "index.js",
   "bin": {
-    "ip2": "ip2.js"
+    "ip2": "./bin/ip2-cli.js"
   },
   "scripts": {
-    "start": "node ip2",
     "test": "make test"
   },
   "repository": {
@@ -18,11 +17,27 @@
     "ip",
     "hosts",
     "cli",
+    "dev",
+    "geo",
+    "dns",
+    "lan",
+    "ipv4",
+    "mask",
+    "cidr",
+    "subnet",
     "tools",
+    "domain",
     "google",
-    "command"
+    "address",
+    "location",
+    "internet",
+    "ip2location",
+    "geolocation"
   ],
-  "author": "Mark Zhan",
+  "author": {
+    "name": "Mark Zhan",
+    "url": "http://markzhan.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/markzhan/ip2/issues"
@@ -30,8 +45,8 @@
   "homepage": "https://github.com/markzhan/ip2",
   "dependencies": {
     "commander": "^2.6.0",
-    "request": "^2.51.0",
-    "ip": "^0.3.2"
+    "ip": "^0.3.2",
+    "request": "^2.51.0"
   },
   "devDependencies": {
     "should": "^4.6.1"
@@ -41,5 +56,6 @@
   },
   "directories": {
     "test": "test"
-  }
+  },
+  "ipapi": "ip-api.com"
 }

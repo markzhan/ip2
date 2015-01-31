@@ -2,15 +2,15 @@
 'use strict';
 
 var ip2 = require('../');
-var path = require('path');
-var request = require('request');
 var program = require('commander');
-var sysinfo = require('../bin/info');
 
 program
-  .version('0.3.1')
+  .version('0.3.2')
   .option('-v, --version', 'get version number')
   .option('-f, --force', 'overwrite file')
+  .option('-l, --local', 'get local ip')
+  .option('-s, --system', 'get system info')
+  .option('-i, --internet', 'get internet ip info')
 
 program
   .command('ls [dir]')
@@ -43,6 +43,7 @@ program
 
 program
   .command('rm <hosts>')
+  //.alias('del')
   .description('delete one custom hosts file')
   .action(function(hosts) {
     ip2.hosts.del(hosts);
@@ -83,34 +84,37 @@ program
 //     ip2.hosts.whois(who);
 //   });
 
-program
-  .command('info')
-  .description('output system & ip info')
-  .option('-s, --system', 'output system info')
-  .option('-l, --local', 'get local ip')
-  .option('-i, --internet', 'get internet ip')
-  .action(function(options) {
-    var myinfo = new sysinfo(options);
-    myinfo.show();
-  }).on('--help', function() {
-    //console.log('');
-  });
+// program
+//   .command('info [ip|domain]')
+//   .description('output ip, domain, system info')
+//   .option('-s, --system', 'output system info')
+//   .option('-l, --local', 'get local ip')
+//   .option('-i, --internet', 'get internet ip')
+//   .option('-d, --detail', 'get details for domain')
+//   .action(function(ipdomain, options) {
+//     var addr = (typeof(ipdomain) == "undefined") ? '' : ipdomain;
+//     var myinfo = new sysinfo(addr, options);
+//     myinfo.show();
+//   }).on('--help', function() {
+//     //console.log('');
+//   });
 
 program
   .command('help')
-  .description('print this help')
+  .description('help & example')
   .action(function() {
-    program.help();
+    program.outputHelp();
+    //program.help();
+    example();
   });
 
 program
   .command('*')
-  .action(function(env){
+  .description('ip utilities')
+  .action(function(env, options){
     //console.log('deploying %s', env);
-    var ret = ip2.ip.iptools(env);
+    var ret = ip2.ip.iptools(env, options);
     if (! ret) {
-      //program.outputHelp();
-      localip();
       example();
     }
   });
@@ -119,15 +123,20 @@ program.parse(process.argv);
 //console.log(' args: %j', program.args);
 
 if (process.argv.length == 2) {
-  localip();
-  example();
+  // console.log();
+  localip('');
+  // example();
 }
 
-function localip() {
-  console.log();
-  var ips = ip2.ip.localip();
+if (program.local) localip('');
+if (program.system) ip2.info.sysinfo();
+if (program.internet) ip2.info.internetip();
+
+function localip(margin) {
+  margin = (typeof(margin) == 'undefined') ? '' : margin;
+  var ips = ip2.info.localip();
   ips.forEach (function(ip) {
-    console.log('  ' + ip);
+    console.log(margin + ip);
   });
 }
 
@@ -135,9 +144,11 @@ function example() {
   console.log('');
   console.log('  Examples:');
   console.log('');
-  console.log('    ip2 -h           # print help');
-  console.log('    ip2 ls           # list hosts');
-  console.log('    ip2 info -lis    # ip & system info');
+  console.log('    ip2 ls        # list hosts');
+  console.log('    ip2 -h        # print help');
+  console.log('    ip2 -lis      # ip & system info');
+  console.log('    ip2 qq.com    # get dns information');
+  console.log('    ip2 8.8.8.8   # get ip geo location');
   console.log('');
   console.log('    ip2 24           # 255.255.255.0');
   console.log('    ip2 127.0.0.1    # ipv4 to long');
@@ -146,6 +157,6 @@ function example() {
   console.log("    ip2 '192.168.1.134 or 0.0.0.255'  # 192.168.1.255");
   console.log("    ip2 '192.168.1.134 mask 255.255.255.0'  # 192.168.1.0");
   console.log("    ip2 '192.168.1.134 subnet 255.255.255.192'  # subnet information");
-  console.log('    ip2 192.168.1.134/26  # CIDR subnet, Same as previous');
+  console.log('    ip2 192.168.1.134/26  # CIDR subnet, same as previous');
   console.log('');
 }
