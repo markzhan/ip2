@@ -49,6 +49,8 @@ ip2 192.168.1.134/26  # CIDR subnet, same as previous
 
 ### HOSTS 文件管理
 
+开发人员经常需要修改 Hosts 文件，Web 开发需要配置本地域名，Android 开发需要下载 SDK，本功能可以使团队共享 hosts 文件，并简化 hosts 文件切换与管理。切换 hosts 文件需要使用 sudo 执行相关命令，Windows 需要管理员权限。为了安全，不要随意使用从网络获取的 hosts 文件。
+
 * `ip2 init` 初始化。备份系统当前 hosts 文件，并将 ip2 hosts 暂存区的 hosts 文件复制到可用 hosts 列表。重复执行此命令会覆盖 hosts 列表中与暂存区同名的 hosts 文件，但不会重复备份系统 hosts 文件。
 
 * `ip2 ls [dir]` 列表 hosts 文件。此命令列出可用的自定义 hosts 文件，缺省显示系统区 hosts 文件列表，支持暂存区和指定目录 hosts 文件列表，只会列出规范命名的文件。ip2 hosts 文件名格式是 `hosts.<name>.ip2` 。
@@ -77,8 +79,6 @@ ip2 cat <name>  # 显示指定 hosts 文件内容
 * `ip2 reload` 重载当前 hosts 文件。此命令将之前 `ip2 use` 启用的 hosts 文件，即当前使用的定制 hosts 文件重新复制到系统 hosts 文件。比如：可以 `ip2 add <name> -f` 添加修改后的同名 hosts，然后 `ip2 reload` 重载，从而更新系统当前 hosts 文件。
 
 * `ip2 rm <name>` 删除自定义 hosts 文件。物理删除系统目录中自定义的 hosts 文件。参数是 `ip2 ls` 列表中显示的名字，其中有 `>` 标志表示是当前启用的定制 hosts 文件，不能删除。
-
-提示：操作 hosts 文件，需要使用 sudo 执行相关命令，Windows 需要管理员权限。不要随意使用从网络获取的 hosts 文件。
 
 ### 查 IP、域名和系统信息
 ```
