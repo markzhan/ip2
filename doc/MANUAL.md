@@ -3,12 +3,9 @@
 
 ip2 是一个命令行工具，支持 Mac OS X, Linux, Windows。主要功能包括：ip 地址计算；快速切换自定义 hosts 文件；查询本机和互联网 ip 信息。ip2 使用 Node 开发，代码托管在 GitHub - https://github.com/markzhan/ip2 。
 
-操作 hosts 文件，需要使用 sudo 执行相关命令，Windows 需要管理员权限。此工具不建议非技术人员使用，不要随意使用从网络获取的 hosts 文件。
-
 ### 安装
 ```
 $ sudo npm i -g ip2  # install
-
 $ sudo npm update -g ip2  # upgrade
 ```
 如果没有安装 Node.js 和 npm，可以去 [Node 官网](http://nodejs.org/) 下载安装包安装。
@@ -56,11 +53,13 @@ ip2 192.168.1.134/26  # CIDR subnet, same as previous
 
 * `ip2 ls [dir]` 列表 hosts 文件。此命令列出可用的自定义 hosts 文件，缺省显示系统区 hosts 文件列表，支持暂存区和指定目录 hosts 文件列表，只会列出规范命名的文件。ip2 hosts 文件名格式是 `hosts.<name>.ip2` 。
 ```
-ip2 ls  # 列出系统目录 hosts 文件。相当于：
+ip2 ls  # 列出系统目录 hosts 文件
+# 相当于：
 ip2 ls /etc  # 列出系统目录 hosts 文件 (对于 *nix)
+# or
 ip2 ls %windir%\system32\drivers\etc  # windows hosts 文件
-
-ip2 ls -  # 参数是 - 减号。列出暂存区 hosts 文件
+# 查看内置 hosts 文件
+ip2 ls -  # 参数是 - 减号。列出暂存区内置 hosts 文件
 ```
 
 * `ip2 cat [name]` 显示 hosts 文件内容。缺省显示系统当前 hosts 文件内容。参数是 `ip2 ls` 中显示的名字。此命令先在系统目录查找 hosts 文件，支持显示暂存区 hosts 文件。
@@ -79,6 +78,7 @@ ip2 cat <name>  # 显示指定 hosts 文件内容
 
 * `ip2 rm <name>` 删除自定义 hosts 文件。物理删除系统目录中自定义的 hosts 文件。参数是 `ip2 ls` 列表中显示的名字，其中有 `>` 标志表示是当前启用的定制 hosts 文件，不能删除。
 
+提示：操作 hosts 文件，需要使用 sudo 执行相关命令，Windows 需要管理员权限。不要随意使用从网络获取的 hosts 文件。
 
 ### 查 IP、域名和系统信息
 ```
@@ -93,4 +93,4 @@ ip2 -lis      # same as previous
 
 ### 其它
 
-参考和使用了 [TJ](http://www.tjholowaychuk.com/) 大神的 [commander.js](https://github.com/tj/commander.js)，内置 [alsohosts](https://github.com/alsotang/alsohosts)。
+参考和使用了 [TJ大神](http://www.tjholowaychuk.com/) 的 [commander.js](https://github.com/tj/commander.js)，内置 [alsohosts](https://github.com/alsotang/alsohosts)。
