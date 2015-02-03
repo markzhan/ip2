@@ -38,7 +38,7 @@ help            help & example
 选项可以为命令提供参数，也能执行命令的功能。上述选项除 -f 外，都用于信息获取和显示。-f 选项是一个开关，用于相关 hosts 文件操作时，强制覆盖已存在的文件。
 
 ### IP 地址计算
-网络规划设计需要计算子网段各项IP参数。如果数据库保存的IP地址是整形，调试时需要换算为点分形式等，都需要IP计算。
+网络规划设计需要计算子网段各项 IP 参数。如果数据库保存的 IP 地址是整形，调试时需要换算为点分形式等，都需要进行 IP 地址计算。
 ```
 ip2 24  # 255.255.255.0
 ip2 127.0.0.1  # ipv4 to long
@@ -86,7 +86,7 @@ ip2 cat <name>  # 显示指定 hosts 文件内容
 ### 查 IP、域名和系统信息
 网络应用和开发经常需要了解系统内外部IP地址，对于运营和网管，还需要了解和确认域名设置，以及互联网IP的相关信息。ip2 v0.3.2 以上版本可以查看域名的 A 记录，以及 CNAME、NS 和 MX 记录。
 ```
-ip2 qq.com    # get dns information - 查域名信息
+ip2 qq.com    # get dns information - 查域名DNS设置
 ip2 8.8.8.8   # get ip geo location - 查互联网IP信息
 ip2 -l        # get local ip
 ip2 -s        # get system info
