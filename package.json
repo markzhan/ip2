@@ -1,7 +1,7 @@
 {
   "name": "ip2",
-  "version": "0.3.3",
-  "description": "$ ip2  # Another ip address & hosts tools",
+  "version": "0.3.6",
+  "description": "Another ip address & hosts tools",
   "main": "index.js",
   "bin": {
     "ip2": "./bin/ip2-cli.js"
@@ -26,9 +26,11 @@
     "cidr",
     "subnet",
     "domain",
-    "google",
     "internet",
+    "google",
     "geo",
+    "ipgeo",
+    "geoip",
     "address",
     "location",
     "ip2location",

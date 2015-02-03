@@ -5,7 +5,7 @@ var ip2 = require('../');
 var program = require('commander');
 
 program
-  .version('0.3.3')
+  .version('0.3.6')
   .option('-v, --version', 'get version number')
   .option('-f, --force', 'overwrite file')
   .option('-l, --local', 'get local ip')
@@ -123,9 +123,9 @@ program.parse(process.argv);
 //console.log(' args: %j', program.args);
 
 if (process.argv.length == 2) {
-  // console.log();
+  console.log();
   localip('');
-  // example();
+  example();
 }
 
 if (program.local) localip('');

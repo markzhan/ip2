@@ -23,6 +23,7 @@ init            init hosts
 help            help & example
 *               ip utilities
 ```
+上述命令中，除 * 星号和 help 以外，都属于 hosts 文件管理命令。不要输入 * 星号，它不是一个命令，它只是一个占位符，表示当输入不属于上述明确定义的命令字时，由 ip 工具解释处理。
 
 ### 选项表
 ```
@@ -34,8 +35,10 @@ help            help & example
 -s, --system    get system info
 -i, --internet  get internet ip info
 ```
+选项可以为命令提供参数，也能执行命令的功能。上述选项除 -f 外，都用于信息获取和显示。-f 选项是一个开关，用于相关 hosts 文件操作时，强制覆盖已存在的文件。
 
 ### IP 地址计算
+规划设计企业内部网络的时候，需要计算网段IP各项参数。数据库保存的IP地址是整形，需要换算为IP等，都需要IP地址计算。
 ```
 ip2 24  # 255.255.255.0
 ip2 127.0.0.1  # ipv4 to long
@@ -81,6 +84,7 @@ ip2 cat <name>  # 显示指定 hosts 文件内容
 * `ip2 rm <name>` 删除自定义 hosts 文件。物理删除系统目录中自定义的 hosts 文件。参数是 `ip2 ls` 列表中显示的名字，其中有 `>` 标志表示是当前启用的定制 hosts 文件，不能删除。
 
 ### 查 IP、域名和系统信息
+网络应用和开发经常需要了解系统内外部IP地址，对于运营和网管，还需要了解和确认域名设置，以及互联网IP的相关信息。ip2 v0.3.2 以上版本可以查看域名的 A 记录，以及 CNAME、NS 和 MX 记录。
 ```
 ip2 qq.com    # get dns information - 查域名信息
 ip2 8.8.8.8   # get ip geo location - 查互联网IP信息

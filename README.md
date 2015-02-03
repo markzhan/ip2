@@ -30,7 +30,7 @@ $ ip2 '! 255.255.255.0'  # 0.0.0.255
 $ ip2 '192.168.1.134 or 0.0.0.255'  # 192.168.1.255
 $ ip2 '192.168.1.134 mask 255.255.255.0'  # 192.168.1.0
 $ ip2 '192.168.1.134 subnet 255.255.255.192'  # subnet information
-$ ip2 192.168.1.134/26  # CIDR subnet, Same as previous
+$ ip2 192.168.1.134/26  # CIDR subnet, same as previous
 ```
 NOTICE: The sudo is must be used when you operating the hosts file.
 
@@ -61,7 +61,7 @@ Usage: ip2 [options] [command]
     -s, --system    get system info
     -i, --internet  get internet ip info
 ```
-See [MANUAL](doc/MANUAL.md) for details.
+See [MANUAL](https://github.com/markzhan/ip2/blob/master/doc/MANUAL.md) for details.
 
 ## Hosts file
 
@@ -72,10 +72,10 @@ See [MANUAL](doc/MANUAL.md) for details.
 * [williamlong](http://www.williamlong.info/archives/3983.html)
 
 ## Release History
-See the [CHANGELOG](doc/CHANGELOG.md).
+See the [CHANGELOG](https://github.com/markzhan/ip2/blob/master/doc/CHANGELOG.md).
 
 ## License
 
-Copyright (c) 2015 Mark Zhan http://markzhan.com
+Copyright (c) 2015 [Mark Zhan](http://markzhan.com).
 
-This project is available under the MIT license. See [LICENSE](LICENSE) for details.
+This project is available under the MIT license. See [LICENSE](https://github.com/markzhan/ip2/blob/master/LICENSE) for details.
