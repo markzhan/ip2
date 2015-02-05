@@ -5,7 +5,7 @@ var ip2 = require('../');
 var program = require('commander');
 
 program
-  .version('1.0.0')
+  .version('1.0.1')
   .option('-v, --version', 'get version number')
   .option('-f, --force', 'overwrite file')
   .option('-l, --local', 'get local ip')
