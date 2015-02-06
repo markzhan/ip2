@@ -1,8 +1,9 @@
+
+# ip2
+
 [![Build Status](https://api.travis-ci.org/markzhan/ip2.svg)](http://travis-ci.org/markzhan/ip2)
 [![NPM Version](http://img.shields.io/npm/v/ip2.svg?style=flat)](https://www.npmjs.org/package/ip2)
 [![NPM Downloads](https://img.shields.io/npm/dm/ip2.svg?style=flat)](https://www.npmjs.org/package/ip2)
-
-# ip2
 
 Another ip address & hosts tools.
 

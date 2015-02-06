@@ -95,6 +95,6 @@ ip2 -l -i -s  # get ip & system info
 ip2 -lis      # same as previous
 ```
 
-### 其它
+### 感谢
 
-参考和使用了 [TJ大神](http://www.tjholowaychuk.com/) 的 [commander.js](https://github.com/tj/commander.js)，内置 [alsohosts](https://github.com/alsotang/alsohosts)。
+使用了 [commander.js](https://github.com/tj/commander.js) 和 [ip 模块](https://github.com/indutny/node-ip)，内置 [alsohosts](https://github.com/alsotang/alsohosts)。
