@@ -97,4 +97,4 @@ ip2 -lis      # same as previous
 
 ### 问题处理
 
-[发现问题可提交 issue](https://github.com/markzhan/relib/issues) 或[留言](http://laozhan.net/ip2)。
+[发现问题可提交 issue](https://github.com/markzhan/ip2/issues) 或 [给作者留言](http://laozhan.net/ip2) 。
