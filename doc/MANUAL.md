@@ -50,7 +50,7 @@ ip2 '192.168.1.134 subnet 255.255.255.192'  # subnet information
 ip2 192.168.1.134/26  # CIDR subnet, same as previous
 ```
 
-### HOSTS 文件管理
+### Hosts 文件管理
 
 开发人员经常需要修改 Hosts 文件，Web 开发需要配置本地域名，Android 开发需要下载 SDK，本功能可以使团队共享 hosts 文件，并简化 hosts 文件切换与管理。切换 hosts 文件需要使用 sudo 执行相关命令，Windows 需要管理员权限。为了安全，不要随意使用从网络获取的 hosts 文件。
 
@@ -95,6 +95,6 @@ ip2 -l -i -s  # get ip & system info
 ip2 -lis      # same as previous
 ```
 
-### 感谢
+### 问题处理
 
-使用了 [commander.js](https://github.com/tj/commander.js) 和 [ip 模块](https://github.com/indutny/node-ip)，内置 [alsohosts](https://github.com/alsotang/alsohosts)。
+[发现问题可提交 issue](https://github.com/markzhan/relib/issues) 或[留言](http://laozhan.net/ip2)。
