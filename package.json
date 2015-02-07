@@ -1,6 +1,6 @@
 {
   "name": "ip2",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Another ip address & hosts tools",
   "main": "index.js",
   "bin": {
@@ -36,7 +36,14 @@
     "ip2location",
     "geolocation",
     "windows",
-    "cmd"
+    "cmd",
+    "os",
+    "osx",
+    "name",
+    "linux",
+    "system",
+    "version",
+    "platform",
   ],
   "author": {
     "name": "Mark Zhan",
@@ -50,6 +57,7 @@
   "dependencies": {
     "commander": "^2.6.0",
     "ip": "^0.3.2",
+    "os-name": "^1.0.3",
     "request": "^2.51.0"
   },
   "devDependencies": {
