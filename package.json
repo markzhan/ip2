@@ -1,6 +1,6 @@
 {
   "name": "ip2",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Another ip address & hosts tools",
   "main": "index.js",
   "bin": {
@@ -43,7 +43,7 @@
     "linux",
     "system",
     "version",
-    "platform",
+    "platform"
   ],
   "author": {
     "name": "Mark Zhan",
