@@ -5,12 +5,13 @@ var ip2 = require('../');
 var program = require('commander');
 
 program
-  .version('1.0.5')
+  .version('1.0.6')
   .option('-v, --version', 'get version number')
   .option('-f, --force', 'overwrite file')
   .option('-l, --local', 'get local ip')
   .option('-s, --system', 'get system info')
   .option('-i, --internet', 'get internet ip info')
+  .option('-c, --chinese', 'output geo ip in chinese')
 
 program
   .command('ls [dir]')
@@ -131,6 +132,7 @@ if (process.argv.length == 2) {
 if (program.local) localip('');
 if (program.system) ip2.info.sysinfo();
 if (program.internet) ip2.info.internetip();
+if (program.chinese && process.argv.length == 3) ip2.info.ipcn();
 
 function localip(margin) {
   margin = (typeof(margin) == 'undefined') ? '' : margin;
