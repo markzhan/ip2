@@ -3,9 +3,10 @@
 
 var ip2 = require('../');
 var program = require('commander');
+var config = require('../package.json');
 
 program
-  .version('1.0.6')
+  .version(config.version)
   .option('-v, --version', 'get version number')
   .option('-f, --force', 'overwrite file')
   .option('-l, --local', 'get local ip')
