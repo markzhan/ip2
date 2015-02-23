@@ -61,6 +61,7 @@ Usage: ip2 [options] [command]
     -l, --local     get local ip
     -s, --system    get system info
     -i, --internet  get internet ip info
+    -c, --chinese   output geo ip in chinese
 ```
 See [MANUAL](https://github.com/markzhan/ip2/blob/master/doc/MANUAL.md) for details.
 
