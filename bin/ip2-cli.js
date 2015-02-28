@@ -102,15 +102,6 @@ program
 //   });
 
 program
-  .command('help')
-  .description('help & example')
-  .action(function() {
-    program.outputHelp();
-    //program.help();
-    example();
-  });
-
-program
   .command('*')
   .description('ip utilities')
   .action(function(env, options){
@@ -119,7 +110,16 @@ program
     if (! ret) {
       example();
     }
-  });
+});
+
+program
+  .command('help')
+  .description('help & example')
+  .action(function() {
+    program.outputHelp();
+    //program.help();
+    example();
+});
 
 program.parse(process.argv);
 //console.log(' args: %j', program.args);
@@ -127,7 +127,17 @@ program.parse(process.argv);
 if (process.argv.length == 2) {
   console.log();
   localip('');
-  example();
+  //example();
+  console.log('');
+  console.log('  Examples:');
+  console.log('');
+  console.log('    ip2 ls                # list hosts');
+  console.log('    ip2 help              # help & example');
+  console.log('    ip2 -lis              # ip & system info');
+  console.log('    ip2 qq.com            # get dns information');
+  console.log('    ip2 8.8.8.8           # get ip geo information');
+  console.log('    ip2 192.168.1.110/26  # CIDR subnet information');
+  console.log('');
 }
 
 if (program.local) localip('');

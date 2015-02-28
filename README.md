@@ -5,7 +5,7 @@
 
 # ip2
 
-Another ip address & hosts tools.
+Get ip info & manage the hosts file.
 
 ## Installation
 ```

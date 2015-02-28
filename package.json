@@ -1,7 +1,7 @@
 {
   "name": "ip2",
-  "version": "1.0.8",
-  "description": "Another ip address & hosts tools",
+  "version": "1.0.9",
+  "description": "Get ip info & manage the hosts file",
   "main": "index.js",
   "bin": {
     "ip2": "./bin/ip2-cli.js"

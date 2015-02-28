@@ -1,7 +1,7 @@
 
 # ip2 使用说明
 
-ip2 是一个命令行工具，支持 Mac OS X, Linux, Windows。主要功能包括：ip 地址计算；快速切换自定义 hosts 文件；查询本机和互联网 ip 信息。ip2 使用 Node 开发，代码托管在 GitHub - https://github.com/markzhan/ip2 。
+ip2 是一个命令行工具，支持 Mac OS X, Linux, Windows。主要用于查询 ip 信息与管理 hosts 文件。ip2 使用 Node 开发，代码托管在 GitHub - https://github.com/markzhan/ip2 。
 
 ### 安装
 ```
@@ -34,6 +34,7 @@ help            help & example
 -l, --local     get local ip
 -s, --system    get system info
 -i, --internet  get internet ip info
+-c, --chinese   output geo ip in chinese
 ```
 选项可以为命令提供参数，也能执行命令的功能。上述选项除 -f 外，都用于信息获取和显示。-f 选项是一个开关，用于相关 hosts 文件操作时，强制覆盖已存在的文件。
 
