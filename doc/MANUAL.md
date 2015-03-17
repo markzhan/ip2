@@ -5,8 +5,9 @@ ip2 是一个命令行工具，支持 Mac OS X, Linux, Windows。主要用于查
 
 ### 安装
 ```
-$ sudo npm i -g ip2  # install
-$ sudo npm update -g ip2  # upgrade
+$ npm i -g ip2
+# or
+$ sudo npm i -g ip2
 ```
 如果没有安装 Node.js 和 npm，可以去 [Node 官网](http://nodejs.org/) 下载安装包安装。
 
@@ -37,19 +38,6 @@ help            help & example
 -c, --chinese   output geo ip in chinese
 ```
 选项可以为命令提供参数，也能执行命令的功能。上述选项除 -f 外，都用于信息获取和显示。-f 选项是一个开关，用于相关 hosts 文件操作时，强制覆盖已存在的文件。
-
-### IP 地址计算
-网络规划设计需要计算子网段各项 IP 参数。如果数据库保存的 IP 地址是整形，调试时需要换算为点分形式等，都需要进行 IP 地址计算。
-```
-ip2 24  # 255.255.255.0
-ip2 127.0.0.1  # ipv4 to long
-ip2 2130706433  # long to ipv4
-ip2 '! 255.255.255.0'  # 0.0.0.255
-ip2 '192.168.1.134 or 0.0.0.255'  # 192.168.1.255
-ip2 '192.168.1.134 mask 255.255.255.0'  # 192.168.1.0
-ip2 '192.168.1.134 subnet 255.255.255.192'  # subnet information
-ip2 192.168.1.134/26  # CIDR subnet, same as previous
-```
 
 ### Hosts 文件管理
 
@@ -84,7 +72,20 @@ ip2 cat <name>  # 显示指定 hosts 文件内容
 
 * `ip2 rm <name>` 删除自定义 hosts 文件。物理删除系统目录中自定义的 hosts 文件。参数是 `ip2 ls` 列表中显示的名字，其中有 `>` 标志表示是当前启用的定制 hosts 文件，不能删除。
 
-### 查 IP、域名和系统信息
+### IP 地址计算
+网络规划设计需要计算子网段各项 IP 参数。如果数据库保存的 IP 地址是整形，调试时需要换算为点分形式等，都需要进行 IP 地址计算。
+```
+ip2 24  # 255.255.255.0
+ip2 127.0.0.1  # ipv4 to long
+ip2 2130706433  # long to ipv4
+ip2 '! 255.255.255.0'  # 0.0.0.255
+ip2 '192.168.1.134 or 0.0.0.255'  # 192.168.1.255
+ip2 '192.168.1.134 mask 255.255.255.0'  # 192.168.1.0
+ip2 '192.168.1.134 subnet 255.255.255.192'  # subnet information
+ip2 192.168.1.134/26  # CIDR subnet, same as previous
+```
+
+### 获取 IP、域名和系统信息
 网络应用和开发经常需要了解系统内外部IP地址，对于运营和网管，还需要了解和确认域名设置，以及互联网IP的相关信息。ip2 v0.3.2 以上版本可以查看域名的 A 记录，以及 CNAME、NS 和 MX 记录。ip2 -s 显示的系统信息包括：主机名、用户名、操作系统版本名称、上线时间及内存使用等。
 ```
 ip2 qq.com    # get dns information - 查域名DNS设置

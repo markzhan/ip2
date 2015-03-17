@@ -5,10 +5,12 @@
 
 # ip2
 
-Get ip info & manage the hosts file.
+Get ip info & manage the hosts files.
 
 ## Installation
 ```
+$ npm i -g ip2
+# or
 $ sudo npm i -g ip2
 ```
 
@@ -49,8 +51,8 @@ Usage: ip2 [options] [command]
     reload         reload used hosts
     reset          reset hosts
     init           init hosts
-    help           help & example
     *              ip utilities
+    help           help & example
 
   Options:
 

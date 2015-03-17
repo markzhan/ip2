@@ -131,7 +131,7 @@ if (process.argv.length == 2) {
   console.log('');
   console.log('  Examples:');
   console.log('');
-  console.log('    ip2 ls                # list hosts');
+  console.log('    ip2 cat               # print hosts');
   console.log('    ip2 help              # help & example');
   console.log('    ip2 -lis              # ip & system info');
   console.log('    ip2 qq.com            # get dns information');
@@ -159,6 +159,7 @@ function example() {
   console.log('');
   console.log('    ip2 ls        # list hosts');
   console.log('    ip2 -h        # print help');
+  console.log('    ip2 cat       # print hosts');
   console.log('    ip2 -lis      # ip & system info');
   console.log('    ip2 qq.com    # get dns information');
   console.log('    ip2 8.8.8.8   # get ip geo location');
